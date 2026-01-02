@@ -3,16 +3,10 @@ name: Deploy React to Docker
 on:
   push:
     branches: [ main ]
-    paths:
-      - 'src/**'
-      - 'public/**'
-      - 'package.json'
-      - 'Dockerfile'
-      - 'docker-compose.react.yml'
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}/react-shadowic
+  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
   build-and-push:
@@ -20,6 +14,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
 
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v2
@@ -36,8 +33,6 @@ jobs:
           tags: |
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
 
   deploy:
     needs: build-and-push
@@ -53,20 +48,28 @@ jobs:
           script: |
             echo "🚀 Deploying React app..."
 
-            # Создаем папку для React проекта если нет
+            # Создаем папку если нет
             mkdir -p /var/www/docker-projects/blog-react
 
-            # Копируем docker-compose
+            # Переходим в папку
             cd /var/www/docker-projects/blog-react
 
-            # Тянем образ
+            # Логинимся в GitHub Container Registry
             echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+            # Тянем новый образ
             docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
 
-            # Останавливаем старый контейнер
-            docker-compose -f docker-compose.react.yml down || true
+            # Останавливаем старый контейнер если есть
+            docker stop react-shadowic 2>/dev/null || true
+            docker rm react-shadowic 2>/dev/null || true
 
-            # Запускаем новый
-            docker-compose -f docker-compose.react.yml up -d
+            # Запускаем новый контейнер
+            docker run -d \
+              --name react-shadowic \
+              --restart always \
+              -p 3002:3000 \
+              ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
 
             echo "✅ React app deployed!"
+            echo "🌐 Check: https://react.shadowic.space"
