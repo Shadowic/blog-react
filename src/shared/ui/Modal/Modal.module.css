@@ -1,0 +1,105 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+.modalContent {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 500px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideIn 0.3s ease;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--card-border);
+}
+
+.modalClose {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.modalClose:after {
+  display: block;
+  content: '×';
+  position: absolute;
+  top: 50%;
+  margin-top: -50%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .modalOverlay {
+    padding: 16px;
+  }
+
+  .modalContent {
+    padding: 20px;
+    max-height: 90vh;
+  }
+
+  .modalClose {
+    top: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modalContent {
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+  .modalClose {
+    top: 6px;
+    right: 6px;
+    width: 24px;
+    height: 24px;
+    font-size: 1.1rem;
+  }
+}

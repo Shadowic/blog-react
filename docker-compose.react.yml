@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  react-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3002:3000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    networks:
+      - react-network
+
+networks:
+  react-network:
+    driver: bridge

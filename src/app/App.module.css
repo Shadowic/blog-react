@@ -1,0 +1,21 @@
+.textBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+    position: relative;
+}
+
+.title {
+    font-size: 3rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.text {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    text-align: center;
+}

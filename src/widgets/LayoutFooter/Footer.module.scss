@@ -1,0 +1,57 @@
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-inline: 20px;
+}
+.footer {
+  position: relative;
+  display: flex;
+  font-family: 'DM Sans', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  padding: 36px 0 48px;
+    &__caption {
+       display: flex;
+       align-items: center;
+       gap: 8px;
+       color: var(--primary-color);
+        &__coffee {
+           width: 25px;
+           height: 25px;
+           transform: translateY(-2px);
+         }
+        &__heart {
+           width: 20px;
+           height: 20px;
+         }
+    }
+    &__content {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       gap: 24px;
+     }
+    &__links {
+       display: flex;
+       align-items: center;
+       gap: 24px;
+     }
+    &__link {
+       display: flex;
+       width: 20px;
+       height: 20px;
+      svg {
+        transition: filter 0.3s ease-in-out;
+        fill: var(--text-color);
+        will-change: filter;
+      }
+      &:hover svg {
+        filter: brightness(0) saturate(100%) invert(55%) sepia(7%) saturate(2902%) hue-rotate(308deg) brightness(86%) contrast(77%);
+      }
+    }
+}
+
+/*color: var(--text-color);*/
+/*color: var(--primary-color);*/
