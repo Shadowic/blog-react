@@ -5,3 +5,4 @@ export { PinterestIcon } from './PinterestIcon';
 export { TgIcon } from './TgIcon';
 export { CoffeeCupIcon } from './CoffeeCupIcon';
 export { HeartIcon } from './HeartIcon';
+export { MilkAndCookiesIcon } from './MilkAndCookies';

@@ -1,5 +1,5 @@
 import type { FC, ReactNode, ButtonHTMLAttributes } from "react";
-import styles from "./Button.module.css";
+import styles from "./Button.module.scss";
 
 type ButtonVariant = "Primary" | "Secondary" | "Outline";
 type ButtonSize = "Small" | "Medium" | "Large";
