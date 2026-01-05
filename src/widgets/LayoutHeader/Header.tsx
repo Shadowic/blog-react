@@ -1,8 +1,10 @@
 import { useCallback, useState } from "react";
 import type { FC } from "react";
+import { Link } from "react-router-dom";
 import { useModal } from "../../shared/lib/context/ModalContext";
 import { ThemeSwitcher } from "../../features/ThemeSwitcher/ui/ThemeSwitcher";
 import { LangSwitcher } from "../../features/LangSwitcher/ui/LangSwitcher";
+import { Navigation } from "../../shared/ui/Navigation/Navigation";
 
 import { Button } from "../../shared/ui/Button";
 import styles from "./Header.module.css";
@@ -20,6 +22,8 @@ export const Header: FC = () => {
       <div className={styles.container}>
 
         <LangSwitcher />
+
+        <Navigation />
 
         <div className={styles.controls}>
           <ThemeSwitcher />
