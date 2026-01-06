@@ -18,10 +18,10 @@ export const Navigation: FC = () => {
     const location = useLocation();
 
     return (
-        <nav className={styles.header}>
-            <ul className={styles.header__content}>
+        <nav className={styles.navbar}>
+            <ul className={styles.navbar__content}>
                 {navItems.map((item) => (
-                    <li key={item.path} className={styles.header__contentItem}>
+                    <li key={item.path} className={styles.navbar__content__item}>
                         <Link
                             to={item.path}
                             className={`${styles.navLink} ${

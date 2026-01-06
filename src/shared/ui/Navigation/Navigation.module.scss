@@ -1,5 +1,7 @@
-.header {
-
+.navbar {
+  display: flex;
+  position: relative;
+  overflow: hidden;
   &__content {
     display: flex;
     justify-content: center;
@@ -7,7 +9,7 @@
     width: fit-content;
     margin: 0 auto;
     padding: 12px 12px 0;
-    color: var(--color-heading);
+    color: var(--primary-color);
     position: relative;
     transition: color 0.3s ease-in-out;
     //@include sm {
@@ -19,7 +21,7 @@
       display: block;
       width: 20px;
       height: 1.5px;
-      background-color: var(--color-border);
+      background-color: var(--primary-color);
       position: absolute;
       bottom: 0;
       transition: background-color 0.3s ease-in-out;
@@ -40,17 +42,17 @@
       //}
     }
   }
-  &__content-item {
+  &__content__item {
     padding: 8px 12px 8px;
-    border-bottom: 1.5px solid var(--color-border);
-    transition: border-color 0.3s ease-in-out;
+    border-bottom: 1.5px solid var(--primary-color);
+    transition: border-color 0.2s ease-in-out;
     align-content: center;
     text-align: center;
     //@include sm {
     //  padding: 12px 24px 12px;
     //}
-    &:has(a.router-link-active.router-link-exact-active) {
-      border: 1.5px solid var(--color-border);
+    &:has(a.active) {
+      border: 1.5px solid var(--primary-color);
       border-bottom-color: transparent;
       border-top-left-radius: 8px;
       border-top-right-radius: 8px;
