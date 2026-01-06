@@ -97,21 +97,11 @@ ul, ol {
   list-style: none;
 }
 
-.container {
-}
-
 p {
   margin: 0;
 }
 
 /* Утилитарные классы */
-.container {
-  width: 100%;
-  max-width: 1140px;
-  margin: 0 auto;
-  padding-inline: 20px;
-}
-
 .button-primary {
   background-color: var(--accent-amber);
   color: var(--bg-color);

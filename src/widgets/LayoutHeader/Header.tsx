@@ -7,7 +7,8 @@ import { LangSwitcher } from "../../features/LangSwitcher/ui/LangSwitcher";
 import { Navigation } from "../../shared/ui/Navigation/Navigation";
 
 import { Button } from "../../shared/ui/Button";
-import styles from "./Header.module.css";
+import styles from "./Header.module.scss";
+import { Container } from '../../shared/ui/Container/Container';
 
 export const Header: FC = () => {
   const { openModal } = useModal();
@@ -19,33 +20,38 @@ export const Header: FC = () => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.container}>
 
-        <LangSwitcher />
+      <Container>
 
-        <Navigation />
+        <div className={styles.headerContent}>
+          <LangSwitcher />
 
-        <div className={styles.controls}>
-          <ThemeSwitcher />
-          <Button
-            onClick={handleAboutClick}
-            variant="Outline"
-            size="Small"
-            className={styles.aboutBtn}
-          >
-            Open modal
-          </Button>
-          <button
-            className={styles.burger}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Открыть меню"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+          <Navigation />
+
+          <div className={styles.controls}>
+            <ThemeSwitcher />
+            <Button
+              onClick={handleAboutClick}
+              variant="Outline"
+              size="Small"
+              className={styles.aboutBtn}
+            >
+              Open modal
+            </Button>
+            <button
+              className={styles.burger}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Открыть меню"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+
         </div>
-      </div>
+
+      </Container>
     </header>
   );
 };

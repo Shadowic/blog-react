@@ -1,6 +1,7 @@
 import type { FC, ComponentType, SVGProps } from "react";
 import styles from "./Footer.module.scss";
 import { CoffeeCupIcon, HeartIcon } from "../../components/icons";
+import { Container } from '../../shared/ui/Container/Container';
 
 interface SocialLink {
     url: string;
@@ -15,7 +16,7 @@ interface FooterProps {
 const Footer: FC<FooterProps> = ({ socialLinks = [] }) => {
     return (
         <footer className={styles.footer}>
-            <div className={styles.container}>
+            <Container>
                 <div className={styles.footer__content}>
                     <div className={styles.footer__caption}>
                         <span>
@@ -52,7 +53,7 @@ const Footer: FC<FooterProps> = ({ socialLinks = [] }) => {
                         </ul>
                     )}
                 </div>
-            </div>
+            </Container>
         </footer>
     );
 };

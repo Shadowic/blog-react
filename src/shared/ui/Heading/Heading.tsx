@@ -49,18 +49,18 @@ export const Heading: React.FC<HeadingProps> = ({
 
     return (
         <div className={styles.heading}>
-            <div className={styles.heading__top}>
-                {icon && (
-                    <i>
-                        {icon}
-                    </i>
-                )}
+            <div>
                 {heading && (
                     <h1
                         className={styles.titleWithGlitch}
                         style={headingStyle}
                         ref={headingRef}
                     >
+                        {icon && (
+                            <i>
+                                {icon}
+                            </i>
+                        )}
                         {heading}
                     </h1>
                 )}
