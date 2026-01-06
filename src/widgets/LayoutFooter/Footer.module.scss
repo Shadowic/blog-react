@@ -38,11 +38,11 @@
        height: 20px;
       svg {
         transition: filter 0.3s ease-in-out;
-        fill: var(--text-color);
+        fill: var(--primary-color);
         will-change: filter;
       }
       &:hover svg {
-        filter: brightness(0) saturate(100%) invert(55%) sepia(7%) saturate(2902%) hue-rotate(308deg) brightness(86%) contrast(77%);
+        filter: brightness(0.6) saturate(1.4);
       }
     }
 }
