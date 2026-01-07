@@ -1,0 +1,36 @@
+.content {
+  position: relative;
+  color: #d0d8db;
+  display: grid;
+  grid-template-columns: 1fr clamp(10px, 33%, 340px);
+  gap: 36px;
+  //@include md {
+  //  grid-template-columns: 1fr;
+  //}
+}
+.intro {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+.cover {
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+  order: unset;
+  //@include md {
+  //  order: -1;
+  //}
+  &__wrap {
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 100%;
+  }
+  &__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

@@ -1,17 +1,27 @@
 import {Heading} from "../../shared/ui/Heading";
-import {MilkAndCookiesIcon} from "../../components/icons";
-// import styles from './AboutPage.module.scss'
+import styles from './AboutPage.module.scss'
+import coverImage from '../../assets/images/IMG_0773.webp'
 
 export default function AboutPage() {
-    const IconComponent = MilkAndCookiesIcon;
-
     return (
         <>
             <Heading
-                icon={<IconComponent />}
-                heading={<>Типа <b>страница</b> о себе</>}
-                caption="React version is coming as soon as possible"
+                heading={<>Cтраница о <b>себе</b></>}
+                caption="приветствую вас в моем блоге"
             />
+            <div className={styles.content}>
+                <p className={styles.intro}>
+                    Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности требуют от нас анализа соответствующий условий активизации. Задача организации, в особенности же рамки и место обучения кадров требуют от нас анализа новых предложений. Повседневная практика показывает, что начало повседневной работы по формированию позиции играет важную роль в формировании позиций, занимаемых участниками в отношении поставленных задач.
+                    <br />
+                    <br />
+                    Повседневная практика показывает, что сложившаяся структура организации требуют определения и уточнения систем массового участия. Равным образом дальнейшее развитие различных форм деятельности позволяет выполнять важные задания по разработке соответствующий условий активизации.
+                </p>
+                <div className={styles.cover}>
+                    <div className={styles.cover__wrap}>
+                        <img src={coverImage} className={styles.cover__image} width={1280} height={853} alt="cover photo"/>
+                    </div>
+                </div>
+            </div>
         </>
     );
 }
