@@ -1,35 +1,35 @@
 import { FC } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './Navigation.module.scss';
 
 interface NavItem {
     path: string;
     label: string;
+    exact?: boolean;
 }
 
 const navItems: NavItem[] = [
-    { path: '/', label: 'Главная' },
+    { path: '/', label: 'Главная', exact: true },
     { path: '/albums', label: 'Альбомы' },
     { path: '/about', label: 'О проекте' },
     { path: '/test-page', label: 'Тестовая' },
 ];
 
 export const Navigation: FC = () => {
-    const location = useLocation();
-
     return (
         <nav className={styles.navbar}>
             <ul className={styles.navbar__content}>
                 {navItems.map((item) => (
                     <li key={item.path} className={styles.navbar__content__item}>
-                        <Link
+                        <NavLink
                             to={item.path}
-                            className={`${styles.navLink} ${
-                                location.pathname === item.path ? styles.active : ''
-                            }`}
+                            end={item.exact}
+                            className={({ isActive }) =>
+                                `${styles.navLink} ${isActive ? styles.active : ''}`
+                            }
                         >
                             {item.label}
-                        </Link>
+                        </NavLink>
                     </li>
                 ))}
             </ul>

@@ -1,6 +1,4 @@
 .content {
-  position: relative;
-  color: #d0d8db;
   display: grid;
   grid-template-columns: 1fr clamp(10px, 33%, 340px);
   gap: 36px;

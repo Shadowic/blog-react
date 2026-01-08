@@ -51,7 +51,7 @@
     //@include sm {
     //  padding: 12px 24px 12px;
     //}
-    &:has(a.active) {
+    &:has(.navLink.active) {
       border: 1.5px solid var(--primary-color);
       border-bottom-color: transparent;
       border-top-left-radius: 8px;

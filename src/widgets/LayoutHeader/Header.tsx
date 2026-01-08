@@ -1,6 +1,5 @@
 import { useCallback, useState } from "react";
 import type { FC } from "react";
-import { Link } from "react-router-dom";
 import { useModal } from "../../shared/lib/context/ModalContext";
 import { ThemeSwitcher } from "../../features/ThemeSwitcher/ui/ThemeSwitcher";
 import { LangSwitcher } from "../../features/LangSwitcher/ui/LangSwitcher";
