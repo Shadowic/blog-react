@@ -1,4 +1,3 @@
-import type { FC, ReactNode } from "react";
 import * as React from "react";
 import styles from "./ItemList.module.scss";
 
@@ -15,10 +14,7 @@ export interface ItemListProps<T> {
     className?: string;
     listClassName?: string;
     itemClassName?: string;
-    grid?: boolean;
-    columns?: number;
-    gap?: string;
-    as?: keyof JSX.IntrinsicElements;
+    gridVariant?: 'grid-2' | 'grid-3' | 'grid-4' | 'no-grid';
 }
 
 function hasId<T>(item: T): item is T & Identifiable {
@@ -26,19 +22,16 @@ function hasId<T>(item: T): item is T & Identifiable {
 }
 
 export const ItemList = <T,>({
-                                 items,
-                                 renderItem,
-                                 keyExtractor,
-                                 loading = false,
-                                 emptyMessage = "No items found",
-                                 className = "",
-                                 listClassName = "",
-                                 itemClassName = "",
-                                 grid = true,
-                                 columns = 3,
-                                 gap = "20px",
-                                 as: Container = "div",
-                             }: ItemListProps<T>) => {
+         items,
+         renderItem,
+         keyExtractor,
+         loading = false,
+         emptyMessage = "No items found",
+         className = "",
+         listClassName = "",
+         itemClassName = "",
+         gridVariant = 'grid-4',
+     }: ItemListProps<T>) => {
     const getKey = (item: T, index: number): string | number => {
         if (keyExtractor) {
             return keyExtractor(item, index);
@@ -51,54 +44,34 @@ export const ItemList = <T,>({
         return index;
     };
 
-    const gridStyle = grid
-        ? {
-            display: "grid",
-            gridTemplateColumns: `repeat(auto-fill, minmax(${Math.floor(100 / columns)}%, 1fr))`,
-            gap,
-        }
-        : {};
-
     if (loading) {
         return (
-            <Container className={`${styles.container} ${className}`}>
-                <div className={styles.loading}>
-                    <div className={styles.loadingSpinner} />
-                    <span className={styles.loadingText}>Loading...</span>
-                </div>
-            </Container>
+            <div className={`${styles.loading} ${className}`}>
+                <div className={styles.loadingSpinner} />
+                <span className={styles.loadingText}>Loading...</span>
+            </div>
         );
     }
 
     if (!items || items.length === 0) {
         return (
-            <Container className={`${styles.container} ${className}`}>
-                <div className={styles.empty}>
-                    {typeof emptyMessage === "string" ? (
-                        <p className={styles.emptyText}>{emptyMessage}</p>
-                    ) : (
-                        emptyMessage
-                    )}
-                </div>
-            </Container>
+            <div className={`${styles.empty} ${className}`}>
+                {typeof emptyMessage === "string" ? (
+                    <p className={styles.emptyText}>{emptyMessage}</p>
+                ) : (
+                    emptyMessage
+                )}
+            </div>
         );
     }
 
     return (
-        <Container className={`${styles.container} ${className}`}>
-            <div
-                className={`${styles.list} ${listClassName}`}
-                style={gridStyle}
-            >
-                {items.map((item, index) => (
-                    <div
-                        key={getKey(item, index)}
-                        className={`${styles.item} ${itemClassName}`}
-                    >
-                        {renderItem(item, index)}
-                    </div>
-                ))}
-            </div>
-        </Container>
+        <div className={`${styles.list} ${styles[`list--${gridVariant}`]} ${listClassName} ${className}`}>
+            {items.map((item, index) => (
+                <React.Fragment key={getKey(item, index)}>
+                    {renderItem(item, index)}
+                </React.Fragment>
+            ))}
+        </div>
     );
 };

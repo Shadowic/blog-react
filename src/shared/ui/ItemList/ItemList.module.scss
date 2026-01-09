@@ -1,13 +1,8 @@
-.container {
-  width: 100%;
-}
-
 .list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  gap: clamp(8px, 1vw, 24px);
   width: 100%;
-}
-
-.item {
-  transition: all 0.2s ease;
 }
 
 .loading {
@@ -47,6 +42,23 @@
   font-size: 0.875rem;
   max-width: 300px;
   margin: 0;
+}
+
+.list--grid-2 {
+  grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+}
+
+.list--grid-3 {
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+}
+
+.list--grid-4 {
+  grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+}
+
+.list--no-grid {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 @keyframes spin {

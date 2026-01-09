@@ -42,6 +42,7 @@ export default function AlbumsPage() {
                                 )}
                             </Link>
                         )}
+                        gridVariant="grid-3"
                         // emptyMessage="Альбомы не найдены"
                         // className={styles.albumsList}
                         // listClassName={styles.albumsGrid}
