@@ -4,6 +4,7 @@ import Header from "../../widgets/LayoutHeader/Header";
 import Footer from "../../widgets/LayoutFooter/Footer";
 import { CoffeeIcon, GithubIcon, LoupeIcon, PinterestIcon, TgIcon } from '../../components/icons';
 import styles from "./MainLayout.module.scss";
+import {Container} from "../ui/Container/Container";
 
 interface MainLayoutProps {
   children?: ReactNode;
@@ -40,10 +41,14 @@ export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
     ];
 
     return (
-        <div className={styles.layout}>
+        <>
             <Header />
-            <main className={styles.main}>{children}</main>
-            <Footer socialLinks={socialLinks} />
-        </div>
+            <div className={styles.layout}>
+                <Container>
+                    <main className={styles.main}>{children}</main>
+                    <Footer socialLinks={socialLinks} />
+                </Container>
+            </div>
+        </>
     );
 };
