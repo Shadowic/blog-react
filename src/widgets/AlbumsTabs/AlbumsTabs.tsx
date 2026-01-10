@@ -1,5 +1,4 @@
 import type { FC } from "react";
-import { NavLink } from "react-router-dom";
 import styles from "./AlbumsTabs.module.scss";
 
 interface AlbumTab {
@@ -7,31 +6,39 @@ interface AlbumTab {
   name: string;
 }
 
-const albumTabs: AlbumTab[] = [
-  { albumCode: "all", name: "all" },
-  { albumCode: "travel", name: "travel" },
-  { albumCode: "foooood", name: "foooood" },
-  { albumCode: "ceramicon", name: "ceramicon" },
-];
+interface AlbumsTabsProps {
+  albumCodes: string[];
+  activeAlbumCode?: string;
+  onAlbumCodeChange: (albumCode: string) => void;
+}
 
-export const AlbumsTabs: FC = () => {
+export const AlbumsTabs: FC<AlbumsTabsProps> = ({
+    albumCodes,
+    activeAlbumCode = "all",
+    onAlbumCodeChange,
+  }) => {
+  const albumTabs: AlbumTab[] = [
+    ...albumCodes.map(code => ({
+      albumCode: code,
+      name: code,
+    })),
+    { albumCode: "all", name: "reset" }
+  ];
+
+  const handleTabClick = (albumCode: string) => {
+    onAlbumCodeChange(albumCode);
+  };
+
   return (
       <nav className={styles.tabs}>
         {albumTabs.map((album) => (
-            <NavLink
+            <button
                 key={album.albumCode}
-                to={
-                  album.albumCode === "all"
-                      ? "/albums"
-                      : `/albums/${album.albumCode}`
-                }
-                end={album.albumCode === "all"}
-                className={({ isActive }) =>
-                    `${styles.tab} ${isActive ? styles.active : ""}`
-                }
+                onClick={() => handleTabClick(album.albumCode)}
+                className={`${styles.tab} ${activeAlbumCode === album.albumCode ? styles.active : ""}`}
             >
               {album.name}
-            </NavLink>
+            </button>
         ))}
       </nav>
   );

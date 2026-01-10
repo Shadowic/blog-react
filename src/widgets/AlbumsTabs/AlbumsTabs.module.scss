@@ -12,6 +12,9 @@
   color: var(--accent-white);
   border-radius: 12px;
   transition: color .2s ease-in-out, background-color .2s ease-in-out;
+  &:hover {
+    background-color: var(--primary-color);
+  }
 }
 
 .active {

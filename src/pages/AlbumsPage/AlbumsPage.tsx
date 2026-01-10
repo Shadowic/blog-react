@@ -1,3 +1,4 @@
+import { useState, useMemo } from "react";
 import { Heading } from "../../shared/ui/Heading";
 import { AlbumsTabs } from "../../widgets/AlbumsTabs/AlbumsTabs";
 import { ItemList } from '../../shared/ui/ItemList';
@@ -6,18 +7,45 @@ import { Link } from 'react-router-dom';
 import styles from './AlbumsPage.module.scss';
 
 export default function AlbumsPage() {
+    const [activeAlbumCode, setActiveAlbumCode] = useState<string>("all");
+
+    const albumCodes = useMemo(() => {
+        const codes = new Set<string>();
+        mockAlbums.forEach(album => {
+            if (album.albumCode) {
+                codes.add(album.albumCode);
+            }
+        });
+        return Array.from(codes);
+    }, []);
+
+    const filteredAlbums = useMemo(() => {
+        if (activeAlbumCode === "all") {
+            return mockAlbums;
+        }
+        return mockAlbums.filter(album => album.albumCode === activeAlbumCode);
+    }, [activeAlbumCode]);
+
+    const handleAlbumCodeChange = (albumCode: string) => {
+        setActiveAlbumCode(albumCode);
+    };
+
     return (
         <>
             <Heading
                 heading={<>Типа <b>страница</b> с альбомами</>}
             />
             <div className={styles.content}>
-                <AlbumsTabs />
+                <AlbumsTabs
+                    albumCodes={albumCodes}
+                    activeAlbumCode={activeAlbumCode}
+                    onAlbumCodeChange={handleAlbumCodeChange}
+                />
                 <div className={styles.albums__main}>
                     <div className={styles.albums__mainBg} />
 
                     <ItemList
-                        items={mockAlbums}
+                        items={filteredAlbums}
                         renderItem={(album) => (
                             <Link
                                 to={`/${album.albumCode}/${album.pageCode}`}
@@ -43,12 +71,12 @@ export default function AlbumsPage() {
                             </Link>
                         )}
                         gridVariant="grid-3"
-                        // emptyMessage="Альбомы не найдены"
-                        // className={styles.albumsList}
-                        // listClassName={styles.albumsGrid}
-                        // itemClassName={styles.albumItem}
+                        emptyMessage={
+                            activeAlbumCode === "all"
+                                ? "Альбомы не найдены"
+                                : `В категории "${activeAlbumCode}" нет альбомов`
+                        }
                     />
-
                 </div>
             </div>
         </>
