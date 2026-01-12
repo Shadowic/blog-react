@@ -1,19 +1,41 @@
+import { useState, useEffect } from "react";
 import {Heading} from "../../shared/ui/Heading";
 import styles from './HomePage.module.scss'
-import {MilkAndCookiesIcon} from "../../components/icons";
 import coverImage from '../../assets/images/IMG_0773.webp'
 import {ItemList} from "../../shared/ui/ItemList";
 import { mockAlbums } from '../../shared/mocks/albums';
 import {Link} from "react-router-dom";
 
+const getRandomItems = <T,>(array: T[], count: number): T[] => {
+    if (!array || array.length === 0) return [];
+
+    const shuffled = [...array];
+
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+
+    return shuffled.slice(0, count);
+};
+
 export default function HomePage() {
-    const IconComponent = MilkAndCookiesIcon;
-    const featuredAlbums = mockAlbums.filter(album => album.isOnIndex === true);
+    const [randomAlbums, setRandomAlbums] = useState<typeof mockAlbums>([]);
+
+    useEffect(() => {
+        const featuredAlbums = mockAlbums.filter(album => album.isOnIndex === true);
+
+        const albumsWithRandomPhotos = featuredAlbums.map(album => ({
+            ...album,
+            randomGallery: getRandomItems(album.imagesGallery || [], 6)
+        }));
+
+        setRandomAlbums(albumsWithRandomPhotos);
+    }, []);
 
     return (
         <div>
             <Heading
-                icon={<IconComponent />}
                 heading={<>Типа <b>главная</b> страница</>}
                 caption="Давайте посидим, посмотрим картиночки"
             />
@@ -30,7 +52,7 @@ export default function HomePage() {
 
             <div className={styles.albums}>
                 <ItemList
-                    items={featuredAlbums}
+                    items={randomAlbums}
                     renderItem={(album) => (
                         <Link
                             to={`/${album.albumCode}/${album.pageCode}`}
@@ -43,6 +65,18 @@ export default function HomePage() {
                                     draggable="false"
                                     className={styles.albums__item__image}
                                 />
+                            </div>
+                            <div className={styles.albums__item__previews}>
+                                {album.randomGallery?.map((image, index) => (
+                                    <div key={index} className={styles.albums__item__preview}>
+                                        <img
+                                            src={image}
+                                            alt={`${album.title} - фото ${index + 1}`}
+                                            draggable="false"
+                                            className={styles}
+                                        />
+                                    </div>
+                                ))}
                             </div>
                             <h2 className={styles.albums__item__title}>
                                 {album.title}
