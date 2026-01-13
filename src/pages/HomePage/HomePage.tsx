@@ -90,7 +90,7 @@ export default function HomePage() {
                                 <p className={styles.albums__item__description}>{album.description}</p>
                             )}
                             {album.button && (
-                                <Button>{album.buttonText}</Button>
+                                <Button className={styles.albums__item__btn}>{album.buttonText}</Button>
                             )}
                         </Link>
                     )}

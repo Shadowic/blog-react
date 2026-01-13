@@ -5,6 +5,7 @@ import { ItemList } from '../../shared/ui/ItemList';
 import { mockAlbums } from '../../shared/mocks/albums';
 import { Link } from 'react-router-dom';
 import styles from './AlbumsPage.module.scss';
+import {Button} from "../../shared/ui/Button";
 
 export default function AlbumsPage() {
     const [activeAlbumCode, setActiveAlbumCode] = useState<string>("all");
@@ -67,6 +68,9 @@ export default function AlbumsPage() {
                                 )}
                                 {album.description && (
                                     <p className={styles.albums__item__description}>{album.description}</p>
+                                )}
+                                {album.button && (
+                                    <Button className={styles.albums__item__btn}>{album.buttonText}</Button>
                                 )}
                             </Link>
                         )}

@@ -42,12 +42,12 @@ export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
 
     return (
         <>
-            <Header />
             <div className={styles.layout}>
+                <Header />
                 <Container>
                     <main className={styles.main}>{children}</main>
-                    <Footer socialLinks={socialLinks} />
                 </Container>
+                <Footer socialLinks={socialLinks} />
             </div>
         </>
     );
