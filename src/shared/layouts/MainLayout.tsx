@@ -5,6 +5,7 @@ import Footer from "../../widgets/LayoutFooter/Footer";
 import { CoffeeIcon, GithubIcon, LoupeIcon, PinterestIcon, TgIcon } from '../../components/icons';
 import styles from "./MainLayout.module.scss";
 import {Container} from "../ui/Container/Container";
+import {ToTopButton} from "../../widgets/ToTopButton/ToTopButton";
 
 interface MainLayoutProps {
   children?: ReactNode;
@@ -48,6 +49,7 @@ export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
                     <main className={styles.main}>{children}</main>
                 </Container>
                 <Footer socialLinks={socialLinks} />
+                <ToTopButton />
             </div>
         </>
     );
