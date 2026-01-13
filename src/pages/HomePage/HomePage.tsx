@@ -5,6 +5,7 @@ import coverImage from '../../assets/images/IMG_0773.webp'
 import {ItemList} from "../../shared/ui/ItemList";
 import { mockAlbums } from '../../shared/mocks/albums';
 import {Link} from "react-router-dom";
+import {Button} from "../../shared/ui/Button";
 
 const getRandomItems = <T,>(array: T[], count: number): T[] => {
     if (!array || array.length === 0) return [];
@@ -51,6 +52,7 @@ export default function HomePage() {
             </div>
 
             <div className={styles.albums}>
+                <div className={styles.albums__mainBg}></div>
                 <ItemList
                     items={randomAlbums}
                     renderItem={(album) => (
@@ -86,6 +88,9 @@ export default function HomePage() {
                             )}
                             {album.description && (
                                 <p className={styles.albums__item__description}>{album.description}</p>
+                            )}
+                            {album.button && (
+                                <Button>{album.buttonText}</Button>
                             )}
                         </Link>
                     )}
