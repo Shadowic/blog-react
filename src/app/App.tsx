@@ -43,7 +43,7 @@ export const App: FC = () => {
               <Route path="/" element={<HomePage />} />
               <Route path="/albums" element={<AlbumsPage />} />
               <Route path="/albums/:albumCode" element={<AlbumsPage />} />
-              <Route path="/:albumCode/:pageCode" element={<AlbumPage />} />
+              <Route path="/albums/:albumCode/:pageCode" element={<AlbumPage />} />
               <Route path="/test-page" element={<TestPage />} />
               <Route path="/about" element={<AboutPage />} />
             </Route>

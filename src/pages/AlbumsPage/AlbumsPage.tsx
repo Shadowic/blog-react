@@ -49,7 +49,7 @@ export default function AlbumsPage() {
                         items={filteredAlbums}
                         renderItem={(album) => (
                             <Link
-                                to={`/${album.albumCode}/${album.pageCode}`}
+                                to={`/albums/${album.albumCode}/${album.pageCode}`}
                                 className={styles.albums__item}
                             >
                                 <div className={styles.albums__item__cover}>
