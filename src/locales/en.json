@@ -77,16 +77,36 @@
     "subtitle": "Greetings! Welcome to my blog",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed erat fringilla mi gravida lacinia et ac est. Nullam sed diam scelerisque, dapibus nulla sit amet, pulvinar mi. Vestibulum ultricies lacinia fermentum. Nam et felis eu risus pretium interdum non non diam. Mauris sollicitudin nunc imperdiet, viverra augue non, molestie elit. Proin maximus pulvinar mauris, vel vestibulum nulla. Donec neque turpis, congue eget mi quis, gravida porttitor dui. Sed feugiat scelerisque facilisis. Vestibulum bibendum nibh vitae magna pretium, sed consectetur mauris volutpat. <br><br> Nulla id enim odio. Aliquam eu dignissim tortor, semper sagittis lorem. Etiam urna enim, tristique eu neque sed, volutpat volutpat sem. Vestibulum ut mauris eu neque ultricies finibus. Morbi tempus at metus ut pellentesque. Aenean tellus nulla, condimentum eu mollis non, dictum in arcu. In eget turpis et felis eleifend viverra vel ut lorem. In elementum libero ante, et euismod nunc porttitor eget. Vivamus vitae ullamcorper sem. Aliquam diam est, dapibus in mi non, scelerisque fermentum augue. Proin volutpat purus turpis, in pretium sem commodo ac. Praesent at sagittis urna. Morbi vel dignissim erat. Mauris ullamcorper sed nisi sed porttitor. Mauris nulla felis, tincidunt vel tristique at, euismod vel sapien. Quisque vitae tristique dui."
   },
+  "testPage": {
+    "title": "<b>Test</b> page",
+    "subtitle": "Here will be some stuff soon",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed erat fringilla mi gravida lacinia et ac est. Nullam sed diam scelerisque, dapibus nulla sit amet, pulvinar mi. Vestibulum ultricies lacinia fermentum. Nam et felis eu risus pretium interdum non non diam. Mauris sollicitudin nunc imperdiet, viverra augue non, molestie elit. Proin maximus pulvinar mauris, vel vestibulum nulla. Donec neque turpis, congue eget mi quis, gravida porttitor dui. Sed feugiat scelerisque facilisis. Vestibulum bibendum nibh vitae magna pretium, sed consectetur mauris volutpat. <br><br> Nulla id enim odio. Aliquam eu dignissim tortor, semper sagittis lorem. Etiam urna enim, tristique eu neque sed, volutpat volutpat sem. Vestibulum ut mauris eu neque ultricies finibus. Morbi tempus at metus ut pellentesque. Aenean tellus nulla, condimentum eu mollis non, dictum in arcu. In eget turpis et felis eleifend viverra vel ut lorem. In elementum libero ante, et euismod nunc porttitor eget. Vivamus vitae ullamcorper sem. Aliquam diam est, dapibus in mi non, scelerisque fermentum augue. Proin volutpat purus turpis, in pretium sem commodo ac. Praesent at sagittis urna. Morbi vel dignissim erat. Mauris ullamcorper sed nisi sed porttitor. Mauris nulla felis, tincidunt vel tristique at, euismod vel sapien. Quisque vitae tristique dui."
+  },
   "footer": {
+    "made_with": "Made with",
+    "and": "and",
     "subtitle": "personal blog",
     "description": "&laquo;Some things may capture your attention, but it&rsquo;s better to&nbsp;focus on&nbsp;those that capture your heart.&raquo;<br>Indian Proverb"
   },
   "menu": {
     "mainPage": "main page",
+    "albums": "albums",
     "travel": "travelling",
     "food": "food",
     "ceramic": "ceramic",
     "test-page": "test page",
     "about": "about me"
+  },
+  "modal": {
+    "openModal": "open modal"
+  },
+  "albums": {
+    "allAlbumsPageTitle": "<b>Albums,</b> bitte"
+  },
+  "albumCode": {
+    "travel": "travel",
+    "foooood": "foooood",
+    "ceramicon": "ceramicon",
+    "all": "reset"
   }
 }

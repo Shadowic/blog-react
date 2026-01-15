@@ -1,21 +1,24 @@
 import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import styles from './Navigation.module.scss';
 
 interface NavItem {
     path: string;
-    label: string;
+    translationKey: string;
     exact?: boolean;
 }
 
 const navItems: NavItem[] = [
-    { path: '/', label: 'Главная', exact: true },
-    { path: '/albums', label: 'Альбомы' },
-    { path: '/about', label: 'О проекте' },
-    { path: '/test-page', label: 'Тестовая' },
+    { path: '/', translationKey: 'menu.mainPage', exact: true },
+    { path: '/albums', translationKey: 'menu.albums' },
+    { path: '/about', translationKey: 'menu.about' },
+    { path: '/test-page', translationKey: 'menu.test-page' },
 ];
 
 export const Navigation: FC = () => {
+    const { t } = useTranslation();
+
     return (
         <nav className={styles.navbar}>
             <ul className={styles.navbar__content}>
@@ -28,7 +31,7 @@ export const Navigation: FC = () => {
                                 `${styles.navLink} ${isActive ? styles.active : ''}`
                             }
                         >
-                            {item.label}
+                            {t(item.translationKey)}
                         </NavLink>
                     </li>
                 ))}

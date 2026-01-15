@@ -36,7 +36,9 @@ export default function AlbumsPage() {
     return (
         <>
             <Heading
-                heading={<><b>Albums,</b> bitte</>}
+                heading={<Trans i18nKey="albums.allAlbumsPageTitle" components={{ b: <b /> }}>
+                    <b>Albums,</b> bitte
+                </Trans>}
             />
             <div className={styles.content}>
                 <AlbumsTabs

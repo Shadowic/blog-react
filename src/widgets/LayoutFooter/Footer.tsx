@@ -1,4 +1,5 @@
 import type { FC, ComponentType, SVGProps } from "react";
+import { useTranslation, Trans } from "react-i18next";
 import styles from "./Footer.module.scss";
 import { CoffeeCupIcon, HeartIcon } from "../../components/icons";
 import { Container } from '../../shared/ui/Container/Container';
@@ -14,17 +15,19 @@ interface FooterProps {
 }
 
 const Footer: FC<FooterProps> = ({ socialLinks = [] }) => {
+    const { t } = useTranslation();
+
     return (
         <footer className={styles.footer}>
             <Container>
                 <div className={styles.footer__content}>
                     <div className={styles.footer__caption}>
                         <span>
-                            Made with
+                            {t("footer.made_with")}
                         </span>
                         <CoffeeCupIcon className={styles.footer__caption__coffee} />
                         <span>
-                            and
+                            {t("footer.and")}
                         </span>
                         <HeartIcon className={styles.footer__caption__heart} />
                     </div>

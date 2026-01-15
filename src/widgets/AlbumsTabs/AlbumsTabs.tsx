@@ -1,4 +1,5 @@
 import type { FC } from "react";
+import { useTranslation } from "react-i18next";
 import styles from "./AlbumsTabs.module.scss";
 
 interface AlbumTab {
@@ -17,12 +18,14 @@ export const AlbumsTabs: FC<AlbumsTabsProps> = ({
     activeAlbumCode = "all",
     onAlbumCodeChange,
   }) => {
+  const { t } = useTranslation();
+
   const albumTabs: AlbumTab[] = [
     ...albumCodes.map(code => ({
       albumCode: code,
-      name: code,
+      name: t(code, code),
     })),
-    { albumCode: "all", name: "reset" }
+    { albumCode: "all", name: t("albumCode.all", "сброс") }
   ];
 
   const handleTabClick = (albumCode: string) => {
