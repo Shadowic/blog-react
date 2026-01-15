@@ -394,7 +394,7 @@ export const mockAlbums: Album[] = [
         button: true,
         buttonText: "albumFougeres.buttonText",
         albumCode: "ceramicon",
-        pageCode: "fuzhers",
+        pageCode: "fougeres",
         imageMain: images.IMG_0001,
         imagesGallery: [
           images.IMG_0001,

@@ -1,0 +1,92 @@
+{
+  "albumBrussels": {
+    "title": "Brussels",
+    "caption": "february 2016",
+    "description": "Brussels is&nbsp;the charming capital of&nbsp;Belgium, harmoniously blending medieval architecture with modern life. The city is&nbsp;renowned for its exquisite waffles, delicious chocolate, and rich history. The city center, with its Grand Place&nbsp;&mdash; one of&nbsp;the most beautiful squares in&nbsp;Europe&nbsp;&mdash; is&nbsp;surrounded by&nbsp;historic buildings, guildhalls, and the Gothic Cathedral of&nbsp;St. Michael and St. Gudula. Here you can also see the famous Manneken Pis, a&nbsp;bronze statue of&nbsp;a&nbsp;boy urinating into a&nbsp;fountain.",
+    "buttonText": "go"
+  },
+  "albumStockholm": {
+    "title": "Stockholm",
+    "caption": "august 2013",
+    "description": "Stockholm is the capital of Sweden, spread across 14 islands connected by bridges, giving the city a unique charm. The Old Town (Gamla Stan), with its narrow streets, medieval buildings, and brightly colored houses, immerses visitors in the atmosphere of past centuries. Here you'll find the Royal Palace (Kungliga Slottet), Storkyrkan (St. Nicholas Church), and numerous charming cafes and shops.",
+    "buttonText": "go"
+  },
+  "albumSibiu": {
+    "title": "Sibiu",
+    "caption": "august 2018",
+    "description": "Sibiu is&nbsp;a&nbsp;charming city in&nbsp;Transylvania, Romania, harmoniously blending medieval architecture with modern life. Its well-preserved historical center, a&nbsp;UNESCO World Heritage Site, is&nbsp;filled with narrow cobblestone streets, colorful houses with tiled roofs, and majestic buildings. Here you&rsquo;ll find the main square (Piata Mare), the City Hall, the Evangelical Church, and many other landmarks that transport visitors back to&nbsp;the Middle Ages.",
+    "buttonText": "go"
+  },
+  "albumItaly": {
+    "title": "Italy",
+    "caption": "july 2017",
+    "description": "Italy is&nbsp;a&nbsp;country with a&nbsp;rich history, culture, and art, located on&nbsp;the Apennine Peninsula in&nbsp;Southern Europe. From the majestic Colosseum in&nbsp;Rome to&nbsp;the romantic canals of&nbsp;Venice, from the Renaissance masterpieces in&nbsp;Florence to&nbsp;the fashionable boutiques of&nbsp;Milan, Italy offers an&nbsp;incredible diversity of&nbsp;experiences. The country is&nbsp;famous for its exquisite cuisine, from pasta and pizza to&nbsp;tiramisu and gelato, as&nbsp;well as&nbsp;for the magnificent wine produced in&nbsp;various regions.",
+    "buttonText": "go"
+  },
+  "albumCakes": {
+    "title": "cakes",
+    "caption": "",
+    "description": "Air-light biscuit, delicate cream, juicy filling&nbsp;&mdash; these are the main components of&nbsp;the perfect cake. Its aroma can transport you back to&nbsp;childhood, awakening nostalgic feelings and vivid memories of&nbsp;holidays and family celebrations. Whether it&rsquo;s a&nbsp;classic Napoleon or&nbsp;a&nbsp;modern exotic dessert, every bite of&nbsp;cake is&nbsp;a&nbsp;small happiness, capable of&nbsp;lifting your spirits and providing unforgettable taste sensations.",
+    "buttonText": "go"
+  },
+  "albumCookies": {
+    "title": "cookies",
+    "caption": "",
+    "description": "Crispy, soft, chocolate, oatmeal&nbsp;&mdash; the world of&nbsp;cookies is&nbsp;incredibly diverse. Each cookie, whether a&nbsp;simple round of&nbsp;shortbread or&nbsp;an&nbsp;exquisite creation with filling and icing, carries the comfort and warmth of&nbsp;home. With a&nbsp;cup of&nbsp;fragrant tea or&nbsp;coffee, with milk or&nbsp;simply on&nbsp;their own&nbsp;&mdash; cookies are always appropriate and capable of&nbsp;brightening your mood at&nbsp;any moment.",
+    "buttonText": "go"
+  },
+  "albumBread": {
+    "title": "bread",
+    "caption": "",
+    "description": "The aroma of&nbsp;freshly baked bread is&nbsp;the smell of&nbsp;home, comfort, and warmth. A&nbsp;golden-brown crust, soft crumb, delicate taste&nbsp;&mdash; all this makes bread an&nbsp;indispensable companion to&nbsp;any table. It&nbsp;can be&nbsp;fluffy and airy, or&nbsp;dense and crunchy, with the addition of&nbsp;seeds, grains, or&nbsp;spices&nbsp;&mdash; everyone will find their favorite type, which will give true enjoyment.",
+    "buttonText": "go"
+  },
+  "albumPancakes": {
+    "title": "pancakes",
+    "caption": "",
+    "description": "Fluffy, delicate pancakes are the perfect breakfast or&nbsp;a&nbsp;light snack anytime of&nbsp;day. Golden-brown, with bubbles on&nbsp;the surface, they melt in&nbsp;your mouth, leaving a&nbsp;pleasant feeling of&nbsp;softness and sweetness. Serve them with fresh berries, maple syrup, whipped cream&nbsp;&mdash; everyone will find their perfect combination, turning an&nbsp;ordinary breakfast into a&nbsp;small celebration.",
+    "buttonText": "go"
+  },
+  "albumFougeres": {
+    "title": "fougeres",
+    "description": "The wine glass, like a&nbsp;crystal flower, opens its petals to&nbsp;reveal a&nbsp;noble wine. Made of&nbsp;thin glass, with an&nbsp;elegant stem and wide rim, it&nbsp;is&nbsp;designed to&nbsp;highlight the beauty and aroma of&nbsp;the drink. In&nbsp;its depths, playing in&nbsp;the light, the wine reveals its nuances and flavors, and the glass becomes not just tableware, but a&nbsp;true work of&nbsp;art.",
+    "buttonText": "go"
+  },
+  "albumCups": {
+    "title": "cups",
+    "description": "This cup is&nbsp;a&nbsp;cozy haven for your favorite drinks. With its warm walls and elegant rim, it&nbsp;offers comfort and coziness, making the aroma of&nbsp;tea or&nbsp;coffee even more captivating. In&nbsp;its depths, the flavors of&nbsp;the drinks unfold, and cozy evenings become warmer and more comfortable.",
+    "buttonText": "go"
+  },
+  "albumPlates": {
+    "title": "plates",
+    "description": "This plate is&nbsp;more than just an&nbsp;empty surface. It&rsquo;s a&nbsp;canvas for a&nbsp;culinary masterpiece, where each ingredient plays its part. Smooth, elegant, with a&nbsp;thin rim, it&nbsp;highlights the beauty and freshness of&nbsp;the dish, and its size is&nbsp;perfect for savoring each portion. On&nbsp;it, the festive table comes alive, and culinary masterpieces find their completion.",
+    "buttonText": "go"
+  },
+  "albumMugs": {
+    "title": "mugs",
+    "description": "This mug is&nbsp;not just a&nbsp;vessel for drinks, but a&nbsp;true friend for mornings and evenings. Made of&nbsp;sturdy ceramic, it&nbsp;keeps your drink warm and offers coziness, while the bright design on&nbsp;its surface lifts your spirits. Whether you&rsquo;re drinking coffee, tea, or&nbsp;just water, this mug will make your ritual more pleasant and comfortable.",
+    "buttonText": "go"
+  },
+  "index": {
+    "title": "It's <b>main</b> page",
+    "subtitle": "It's party time",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed erat fringilla mi gravida lacinia et ac est. Nullam sed diam scelerisque, dapibus nulla sit amet, pulvinar mi. Vestibulum ultricies lacinia fermentum. Nam et felis eu risus pretium interdum non non diam."
+  },
+  "about": {
+    "title": "It's <b>about</b> page",
+    "subtitle": "Greetings! Welcome to my blog",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed erat fringilla mi gravida lacinia et ac est. Nullam sed diam scelerisque, dapibus nulla sit amet, pulvinar mi. Vestibulum ultricies lacinia fermentum. Nam et felis eu risus pretium interdum non non diam. Mauris sollicitudin nunc imperdiet, viverra augue non, molestie elit. Proin maximus pulvinar mauris, vel vestibulum nulla. Donec neque turpis, congue eget mi quis, gravida porttitor dui. Sed feugiat scelerisque facilisis. Vestibulum bibendum nibh vitae magna pretium, sed consectetur mauris volutpat. <br><br> Nulla id enim odio. Aliquam eu dignissim tortor, semper sagittis lorem. Etiam urna enim, tristique eu neque sed, volutpat volutpat sem. Vestibulum ut mauris eu neque ultricies finibus. Morbi tempus at metus ut pellentesque. Aenean tellus nulla, condimentum eu mollis non, dictum in arcu. In eget turpis et felis eleifend viverra vel ut lorem. In elementum libero ante, et euismod nunc porttitor eget. Vivamus vitae ullamcorper sem. Aliquam diam est, dapibus in mi non, scelerisque fermentum augue. Proin volutpat purus turpis, in pretium sem commodo ac. Praesent at sagittis urna. Morbi vel dignissim erat. Mauris ullamcorper sed nisi sed porttitor. Mauris nulla felis, tincidunt vel tristique at, euismod vel sapien. Quisque vitae tristique dui."
+  },
+  "footer": {
+    "subtitle": "personal blog",
+    "description": "&laquo;Some things may capture your attention, but it&rsquo;s better to&nbsp;focus on&nbsp;those that capture your heart.&raquo;<br>Indian Proverb"
+  },
+  "menu": {
+    "mainPage": "main page",
+    "travel": "travelling",
+    "food": "food",
+    "ceramic": "ceramic",
+    "test-page": "test page",
+    "about": "about me"
+  }
+}

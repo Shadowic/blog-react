@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useTranslation, Trans } from "react-i18next";
 import {Heading} from "../../shared/ui/Heading";
 import styles from './HomePage.module.scss'
 import coverImage from '../../assets/images/IMG_0773.webp'
@@ -21,6 +22,7 @@ const getRandomItems = <T,>(array: T[], count: number): T[] => {
 };
 
 export default function HomePage() {
+    const { t } = useTranslation();
     const [randomAlbums, setRandomAlbums] = useState<typeof mockAlbums>([]);
 
     useEffect(() => {
@@ -37,13 +39,16 @@ export default function HomePage() {
     return (
         <div>
             <Heading
-                heading={<>Типа <b>главная</b> страница</>}
-                caption="Давайте посидим, посмотрим картиночки"
+                heading={<Trans i18nKey="index.title" components={{ b: <b /> }}>
+                    <b>Fallback</b> текст
+                </Trans>}
+                caption={t("index.subtitle")}
             />
             <div className={styles.content}>
-                <p className={styles.intro}>
-                    Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности требуют от нас анализа соответствующий условий активизации. Задача организации, в особенности же рамки и место обучения кадров требуют от нас анализа новых предложений. Повседневная практика показывает, что начало повседневной работы по формированию позиции играет важную роль в формировании позиций, занимаемых участниками в отношении поставленных задач.
-                </p>
+                <p
+                    className={styles.intro}
+                    dangerouslySetInnerHTML={{ __html: t("index.description") }}
+                />
                 <div className={styles.cover}>
                     <div className={styles.cover__wrap}>
                         <img src={coverImage} className={styles.cover__image} width={1280} height={853} alt="cover photo"/>
@@ -55,45 +60,56 @@ export default function HomePage() {
                 <div className={styles.albums__mainBg}></div>
                 <ItemList
                     items={randomAlbums}
-                    renderItem={(album) => (
-                        <Link
-                            to={`/albums/${album.albumCode}/${album.pageCode}`}
-                            className={styles.albums__item}
-                        >
-                            <div className={styles.albums__item__cover}>
-                                <img
-                                    src={album.imageMain}
-                                    alt={album.title}
-                                    draggable="false"
-                                    className={styles.albums__item__image}
-                                />
-                            </div>
-                            <div className={styles.albums__item__previews}>
-                                {album.randomGallery?.map((image, index) => (
-                                    <div key={index} className={styles.albums__item__preview}>
-                                        <img
-                                            src={image}
-                                            alt={`${album.title} - фото ${index + 1}`}
-                                            draggable="false"
-                                            className={styles}
-                                        />
-                                    </div>
-                                ))}
-                            </div>
-                            <h2 className={styles.albums__item__title}>
-                                {album.title}
-                            </h2>
-                            {album.caption && (
-                                <p className={styles.albums__item__caption}>{album.caption}</p>
-                            )}
-                            {album.description && (
-                                <p className={styles.albums__item__description}>{album.description}</p>
-                            )}
-                            {album.button && (
-                                <Button className={styles.albums__item__btn}>{album.buttonText}</Button>
-                            )}
-                        </Link>
-                    )}
+                    renderItem={(album) => {
+                        const albumKey = `album${album.pageCode?.charAt(0).toUpperCase()}${album.pageCode?.slice(1).toLowerCase()}`;
+
+                        return (
+                            <Link
+                                to={`/albums/${album.albumCode}/${album.pageCode}`}
+                                className={styles.albums__item}
+                            >
+                                <div className={styles.albums__item__cover}>
+                                    <img
+                                        src={album.imageMain}
+                                        alt={album.title}
+                                        draggable="false"
+                                        className={styles.albums__item__image}
+                                    />
+                                </div>
+                                <div className={styles.albums__item__previews}>
+                                    {album.randomGallery?.map((image, index) => (
+                                        <div key={index} className={styles.albums__item__preview}>
+                                            <img
+                                                src={image}
+                                                alt={`${album.title} - фото ${index + 1}`}
+                                                draggable="false"
+                                                className={styles}
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
+                                <h2 className={styles.albums__item__title}>
+                                    {t(`${albumKey}.title`)}
+                                </h2>
+                                {album.caption && (
+                                    <p className={styles.albums__item__caption}>
+                                        {t(`${albumKey}.caption`)}
+                                    </p>
+                                )}
+
+                                {album.description && (
+                                    <p className={styles.albums__item__description}
+                                       dangerouslySetInnerHTML={{ __html: t(`${albumKey}.description`) }}
+                                    />
+                                )}
+                                {album.button && (
+                                    <Button className={styles.albums__item__btn}>
+                                        {t(`${albumKey}.buttonText`, album.buttonText || "перейти")}
+                                    </Button>
+                                )}
+                            </Link>
+                        )
+                    }}
                     gridVariant="grid-4"
                     emptyMessage="Избранные альбомы скоро появятся"
                 />

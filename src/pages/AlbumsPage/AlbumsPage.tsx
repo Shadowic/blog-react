@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { useTranslation, Trans } from "react-i18next";
 import { Heading } from "../../shared/ui/Heading";
 import { AlbumsTabs } from "../../widgets/AlbumsTabs/AlbumsTabs";
 import { ItemList } from '../../shared/ui/ItemList';
@@ -8,6 +9,7 @@ import styles from './AlbumsPage.module.scss';
 import {Button} from "../../shared/ui/Button";
 
 export default function AlbumsPage() {
+    const { t } = useTranslation();
     const [activeAlbumCode, setActiveAlbumCode] = useState<string>("all");
 
     const albumCodes = useMemo(() => {
@@ -34,7 +36,7 @@ export default function AlbumsPage() {
     return (
         <>
             <Heading
-                heading={<>Типа <b>страница</b> с альбомами</>}
+                heading={<><b>Albums,</b> bitte</>}
             />
             <div className={styles.content}>
                 <AlbumsTabs
@@ -47,33 +49,56 @@ export default function AlbumsPage() {
 
                     <ItemList
                         items={filteredAlbums}
-                        renderItem={(album) => (
-                            <Link
-                                to={`/albums/${album.albumCode}/${album.pageCode}`}
-                                className={styles.albums__item}
-                            >
-                                <div className={styles.albums__item__cover}>
-                                    <img
-                                        src={album.imageMain}
-                                        alt={album.title}
-                                        draggable="false"
-                                        className={styles.albums__item__image}
-                                    />
-                                </div>
-                                <h2 className={styles.albums__item__title}>
-                                    {album.title}
-                                </h2>
-                                {album.caption && (
-                                    <p className={styles.albums__item__caption}>{album.caption}</p>
-                                )}
-                                {album.description && (
-                                    <p className={styles.albums__item__description}>{album.description}</p>
-                                )}
-                                {album.button && (
-                                    <Button className={styles.albums__item__btn}>{album.buttonText}</Button>
-                                )}
-                            </Link>
-                        )}
+                        renderItem={(album) => {
+                            const albumKey = `album${album.pageCode?.charAt(0).toUpperCase()}${album.pageCode?.slice(1).toLowerCase()}`;
+
+                            return (
+                                <Link
+                                    to={`/albums/${album.albumCode}/${album.pageCode}`}
+                                    className={styles.albums__item}
+                                >
+                                    <div className={styles.albums__item__cover}>
+                                        <img
+                                            src={album.imageMain}
+                                            alt={album.title}
+                                            draggable="false"
+                                            className={styles.albums__item__image}
+                                        />
+                                    </div>
+                                    <div className={styles.albums__item__previews}>
+                                        {album.randomGallery?.map((image, index) => (
+                                            <div key={index} className={styles.albums__item__preview}>
+                                                <img
+                                                    src={image}
+                                                    alt={`${album.title} - фото ${index + 1}`}
+                                                    draggable="false"
+                                                    className={styles}
+                                                />
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <h2 className={styles.albums__item__title}>
+                                        {t(`${albumKey}.title`)}
+                                    </h2>
+                                    {album.caption && (
+                                        <p className={styles.albums__item__caption}>
+                                            {t(`${albumKey}.caption`)}
+                                        </p>
+                                    )}
+
+                                    {album.description && (
+                                        <p className={styles.albums__item__description}
+                                           dangerouslySetInnerHTML={{ __html: t(`${albumKey}.description`) }}
+                                        />
+                                    )}
+                                    {album.button && (
+                                        <Button className={styles.albums__item__btn}>
+                                            {t(`${albumKey}.buttonText`, album.buttonText || "перейти")}
+                                        </Button>
+                                    )}
+                                </Link>
+                            )
+                        }}
                         gridVariant="grid-3"
                         emptyMessage={
                             activeAlbumCode === "all"

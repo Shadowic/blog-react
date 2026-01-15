@@ -1,12 +1,14 @@
 import { Heading } from "../../shared/ui/Heading";
+import { useTranslation, Trans } from "react-i18next";
 import { useParams } from "react-router-dom";
 import { mockAlbums } from '../../shared/mocks/albums';
 import { ItemList } from "../../shared/ui/ItemList";
 import styles from './AlbumPage.module.scss';
 
 export default function AlbumPage() {
-    const { albumCode, pageCode } = useParams<{ albumCode: string; pageCode: string }>();
+    const { t } = useTranslation();
 
+    const { albumCode, pageCode } = useParams<{ albumCode: string; pageCode: string }>();
     const album = mockAlbums.find(
         a => a.albumCode === albumCode && a.pageCode === pageCode
     );
@@ -15,18 +17,31 @@ export default function AlbumPage() {
         return (
             <div className={styles.notFound}>
                 <Heading
-                    heading="404 - Альбом не найден"
-                    caption="Попробуйте выбрать другой альбом"
+                    heading={t("albumPage.notFound.title", "404 - Альбом не найден")}
+                    caption={t("albumPage.notFound.caption", "Попробуйте выбрать другой альбом")}
                 />
             </div>
         );
     }
 
+    const albumKey = `album${album.pageCode}`;
+
     return (
         <div>
             <Heading
-                heading={<><b>{`${album.title},` || `Альбом: ${album.pageCode},`}</b> bitte</>}
-                caption={album.description}
+                heading={
+                    <>
+                        <b>
+                            {t(`${albumKey}.title`, album.title || `Альбом: ${album.pageCode}`)},
+                        </b>
+                        {` bitte`}
+                    </>
+                }
+                caption={
+                    <div dangerouslySetInnerHTML={{
+                        __html: t(`${albumKey}.description`, album.description)
+                    }} />
+                }
             />
 
             {album.imagesGallery && album.imagesGallery.length > 0 && (
