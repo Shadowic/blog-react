@@ -14,26 +14,20 @@ interface PhotoModalProps {
 }
 
 export const PhotoModal: FC<PhotoModalProps> = ({
-                                                    isOpen,
-                                                    onClose,
-                                                    photos,
-                                                    currentIndex,
-                                                    albumTitle,
-                                                    onPrev,
-                                                    onNext,
-                                                    onSelectPhoto
-                                                }) => {
+        isOpen,
+        onClose,
+        photos,
+        currentIndex,
+        albumTitle,
+        onPrev,
+        onNext,
+        onSelectPhoto
+    }) => {
     if (photos.length === 0) return null;
 
     return (
         <Modal isOpen={isOpen} onClose={onClose}>
             <div className={styles.photoModal}>
-                <div className={styles.modalHeader}>
-                    <h3 className={styles.modalTitle}>
-                        {albumTitle} - фото {currentIndex + 1} из {photos.length}
-                    </h3>
-                </div>
-
                 <div className={styles.photoContainer}>
                     <button
                         className={styles.navButton}
@@ -47,6 +41,7 @@ export const PhotoModal: FC<PhotoModalProps> = ({
                         src={photos[currentIndex]}
                         alt={`Фото ${currentIndex + 1}`}
                         className={styles.modalPhoto}
+                        draggable="false"
                     />
 
                     <button
@@ -69,6 +64,7 @@ export const PhotoModal: FC<PhotoModalProps> = ({
                                 src={photo}
                                 alt={`Превью ${index + 1}`}
                                 className={styles.thumbnailImage}
+                                draggable="false"
                             />
                         </button>
                     ))}
