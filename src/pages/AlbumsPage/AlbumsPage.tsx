@@ -6,7 +6,7 @@ import { ItemList } from '../../shared/ui/ItemList';
 import { mockAlbums } from '../../shared/mocks/albums';
 import { Link } from 'react-router-dom';
 import styles from './AlbumsPage.module.scss';
-import {Button} from "../../shared/ui/Button";
+import buttonStyles from "../../shared/ui/Button/Button.module.scss";
 
 export default function AlbumsPage() {
     const { t } = useTranslation();
@@ -55,10 +55,7 @@ export default function AlbumsPage() {
                             const albumKey = `album${album.pageCode?.charAt(0).toUpperCase()}${album.pageCode?.slice(1).toLowerCase()}`;
 
                             return (
-                                <Link
-                                    to={`/albums/${album.albumCode}/${album.pageCode}`}
-                                    className={styles.albums__item}
-                                >
+                                <div className={styles.albums__item}>
                                     <div className={styles.albums__item__cover}>
                                         <img
                                             src={album.imageMain}
@@ -66,18 +63,6 @@ export default function AlbumsPage() {
                                             draggable="false"
                                             className={styles.albums__item__image}
                                         />
-                                    </div>
-                                    <div className={styles.albums__item__previews}>
-                                        {album.randomGallery?.map((image, index) => (
-                                            <div key={index} className={styles.albums__item__preview}>
-                                                <img
-                                                    src={image}
-                                                    alt={`${album.title} - фото ${index + 1}`}
-                                                    draggable="false"
-                                                    className={styles}
-                                                />
-                                            </div>
-                                        ))}
                                     </div>
                                     <h2 className={styles.albums__item__title}>
                                         {t(`${albumKey}.title`)}
@@ -94,11 +79,14 @@ export default function AlbumsPage() {
                                         />
                                     )}
                                     {album.button && (
-                                        <Button className={styles.albums__item__btn}>
+                                        <Link
+                                            to={`/albums/${album.albumCode}/${album.pageCode}`}
+                                            className={`${styles.albums__item__btn} ${buttonStyles.btn} ${buttonStyles.btnPrimary} ${buttonStyles.btnOutline}`}
+                                        >
                                             {t(`${albumKey}.buttonText`, album.buttonText || "перейти")}
-                                        </Button>
+                                        </Link>
                                     )}
-                                </Link>
+                                </div>
                             )
                         }}
                         gridVariant="grid-3"
