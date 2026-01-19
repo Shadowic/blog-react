@@ -10,27 +10,27 @@ import {Button} from "../../shared/ui/Button";
 
 export default function AlbumsPage() {
     const { t } = useTranslation();
-    const [activeAlbumCode, setActiveAlbumCode] = useState<string>("all");
+    const [activeAlbumKey, setActiveAlbumKey] = useState<string>("all");
 
-    const albumCodes = useMemo(() => {
-        const codes = new Set<string>();
+    const albumKeys = useMemo(() => {
+        const keys = new Set<string>();
         mockAlbums.forEach(album => {
-            if (album.albumCode) {
-                codes.add(album.albumCode);
+            if (album.albumKey) {
+                keys.add(album.albumKey);
             }
         });
-        return Array.from(codes);
+        return Array.from(keys);
     }, []);
 
     const filteredAlbums = useMemo(() => {
-        if (activeAlbumCode === "all") {
+        if (activeAlbumKey === "all") {
             return mockAlbums;
         }
-        return mockAlbums.filter(album => album.albumCode === activeAlbumCode);
-    }, [activeAlbumCode]);
+        return mockAlbums.filter(album => album.albumKey === activeAlbumKey);
+    }, [activeAlbumKey]);
 
-    const handleAlbumCodeChange = (albumCode: string) => {
-        setActiveAlbumCode(albumCode);
+    const handleAlbumKeyChange = (albumKey: string) => {
+        setActiveAlbumKey(albumKey);
     };
 
     return (
@@ -42,9 +42,9 @@ export default function AlbumsPage() {
             />
             <div className={styles.content}>
                 <AlbumsTabs
-                    albumCodes={albumCodes}
-                    activeAlbumCode={activeAlbumCode}
-                    onAlbumCodeChange={handleAlbumCodeChange}
+                    albumKeys={albumKeys}
+                    activeAlbumKey={activeAlbumKey}
+                    onAlbumKeyChange={handleAlbumKeyChange}
                 />
                 <div className={styles.albums__main}>
                     <div className={styles.albums__mainBg} />
@@ -103,9 +103,9 @@ export default function AlbumsPage() {
                         }}
                         gridVariant="grid-3"
                         emptyMessage={
-                            activeAlbumCode === "all"
+                            activeAlbumKey === "all"
                                 ? "Альбомы не найдены"
-                                : `В категории "${activeAlbumCode}" нет альбомов`
+                                : `В категории "${activeAlbumKey}" нет альбомов`
                         }
                     />
                 </div>

@@ -3,42 +3,42 @@ import { useTranslation } from "react-i18next";
 import styles from "./AlbumsTabs.module.scss";
 
 interface AlbumTab {
-  albumCode: string;
+  albumKey: string;
   name: string;
 }
 
 interface AlbumsTabsProps {
-  albumCodes: string[];
-  activeAlbumCode?: string;
-  onAlbumCodeChange: (albumCode: string) => void;
+  albumKeys: string[];
+  activeAlbumKey?: string;
+  onAlbumKeyChange: (albumKey: string) => void;
 }
 
 export const AlbumsTabs: FC<AlbumsTabsProps> = ({
-    albumCodes,
-    activeAlbumCode = "all",
-    onAlbumCodeChange,
+    albumKeys,
+    activeAlbumKey = "all",
+    onAlbumKeyChange,
   }) => {
   const { t } = useTranslation();
 
   const albumTabs: AlbumTab[] = [
-    ...albumCodes.map(code => ({
-      albumCode: code,
+    ...albumKeys.map(code => ({
+      albumKey: code,
       name: t(code, code),
     })),
-    { albumCode: "all", name: t("albumCode.all", "сброс") }
+    { albumKey: "all", name: t("albumKey.all", "сброс") }
   ];
 
-  const handleTabClick = (albumCode: string) => {
-    onAlbumCodeChange(albumCode);
+  const handleTabClick = (albumKey: string) => {
+    onAlbumKeyChange(albumKey);
   };
 
   return (
       <nav className={styles.tabs}>
         {albumTabs.map((album) => (
             <button
-                key={album.albumCode}
-                onClick={() => handleTabClick(album.albumCode)}
-                className={`${styles.tab} ${activeAlbumCode === album.albumCode ? styles.active : ""}`}
+                key={album.albumKey}
+                onClick={() => handleTabClick(album.albumKey)}
+                className={`${styles.tab} ${activeAlbumKey === album.albumKey ? styles.active : ""}`}
             >
               {album.name}
             </button>

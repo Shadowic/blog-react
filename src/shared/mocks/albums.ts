@@ -23,7 +23,8 @@ export const mockAlbums: Album[] = [
         description: "albumBrussels.description",
         button: true,
         buttonText: "albumBrussels.buttonText",
-        albumCode: "albumCode.travel",
+        albumKey: "albumCode.travel",
+        albumCode: "travel",
         pageCode: "Brussels",
         imageMain: images.IMG_0007,
         imagesGallery: [
@@ -65,7 +66,8 @@ export const mockAlbums: Album[] = [
         description: "albumStockholm.description",
         button: true,
         buttonText: "albumStockholm.buttonText",
-        albumCode: "albumCode.travel",
+        albumKey: "albumCode.travel",
+        albumCode: "travel",
         pageCode: "Stockholm",
         imageMain: images.IMG_0017,
         imagesGallery: [
@@ -119,7 +121,8 @@ export const mockAlbums: Album[] = [
         description: "albumSibiu.description",
         button: true,
         buttonText: "albumSibiu.buttonText",
-        albumCode: "albumCode.travel",
+        albumKey: "albumCode.travel",
+        albumCode: "travel",
         pageCode: "Sibiu",
         imageMain: images.IMG_0022,
         imagesGallery: [
@@ -165,7 +168,8 @@ export const mockAlbums: Album[] = [
         description: "albumItaly.description",
         button: true,
         buttonText: "albumItaly.buttonText",
-        albumCode: "albumCode.travel",
+        albumKey: "albumCode.travel",
+        albumCode: "travel",
         pageCode: "Italy",
         imageMain: images.IMG_0027,
         imagesGallery: [
@@ -208,7 +212,8 @@ export const mockAlbums: Album[] = [
         description: "albumCakes.description",
         button: true,
         buttonText: "albumCakes.buttonText",
-        albumCode: "albumCode.foooood",
+        albumKey: "albumCode.foooood",
+        albumCode: "foooood",
         pageCode: "Cakes",
         imageMain: images.IMG_9408,
         imagesGallery: [
@@ -251,7 +256,8 @@ export const mockAlbums: Album[] = [
         description: "albumCookies.description",
         button: true,
         buttonText: "albumCookies.buttonText",
-        albumCode: "albumCode.foooood",
+        albumKey: "albumCode.foooood",
+        albumCode: "foooood",
         pageCode: "Cookies",
         imageMain: images.IMG_9542,
         imagesGallery: [
@@ -300,7 +306,8 @@ export const mockAlbums: Album[] = [
         description: "albumBread.description",
         button: true,
         buttonText: "albumBread.buttonText",
-        albumCode: "albumCode.foooood",
+        albumKey: "albumCode.foooood",
+        albumCode: "foooood",
         pageCode: "Bread",
         imageMain: images.IMG_0006,
         imagesGallery: [
@@ -349,7 +356,8 @@ export const mockAlbums: Album[] = [
         description: "albumPancakes.description",
         button: true,
         buttonText: "albumPancakes.buttonText",
-        albumCode: "albumCode.foooood",
+        albumKey: "albumCode.foooood",
+        albumCode: "foooood",
         pageCode: "Pancakes",
         imageMain: images.IMG_9484,
         imagesGallery: [
@@ -393,7 +401,8 @@ export const mockAlbums: Album[] = [
         description: "albumFougeres.description",
         button: true,
         buttonText: "albumFougeres.buttonText",
-        albumCode: "albumCode.ceramicon",
+        albumKey: "albumCode.ceramicon",
+        albumCode: "ceramicon",
         pageCode: "fougeres",
         imageMain: images.IMG_0001,
         imagesGallery: [
@@ -411,7 +420,8 @@ export const mockAlbums: Album[] = [
         description: "albumCups.description",
         button: true,
         buttonText: "albumCups.buttonText",
-        albumCode: "albumCode.ceramicon",
+        albumKey: "albumCode.ceramicon",
+        albumCode: "ceramicon",
         pageCode: "cups",
         imageMain: images.IMG_0002,
         imagesGallery: [
@@ -427,7 +437,8 @@ export const mockAlbums: Album[] = [
         description: "albumPlates.description",
         button: true,
         buttonText: "albumPlates.buttonText",
-        albumCode: "albumCode.ceramicon",
+        albumKey: "albumCode.ceramicon",
+        albumCode: "ceramicon",
         pageCode: "plates",
         imageMain: images.IMG_0003,
         imagesGallery: [
@@ -444,7 +455,8 @@ export const mockAlbums: Album[] = [
         description: "albumMugs.description",
         button: true,
         buttonText: "albumMugs.buttonText",
-        albumCode: "albumCode.ceramicon",
+        albumKey: "albumCode.ceramicon",
+        albumCode: "ceramicon",
         pageCode: "mugs",
         imageMain: images.IMG_0004,
         imagesGallery: [

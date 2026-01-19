@@ -4,7 +4,7 @@ import { useModal } from "../../shared/lib/context/ModalContext";
 import { ThemeSwitcher } from "../../features/ThemeSwitcher/ui/ThemeSwitcher";
 import { LangSwitcher } from "../../features/LangSwitcher/ui/LangSwitcher";
 import { Navigation } from "../../shared/ui/Navigation/Navigation";
-import { useTranslation, Trans } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 import { Button } from "../../shared/ui/Button";
 import styles from "./Header.module.scss";
@@ -31,14 +31,6 @@ export const Header: FC = () => {
 
           <div className={styles.controls}>
             <ThemeSwitcher />
-            <Button
-              onClick={handleAboutClick}
-              variant="Outline"
-              size="Small"
-              className={styles.aboutBtn}
-            >
-              {t("modal.openModal")}
-            </Button>
             <button
               className={styles.burger}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
