@@ -2,7 +2,7 @@ name: Deploy React Blog
 
 on:
   push:
-    branches: [ main ]
+    branches: [ naster ]
 
 jobs:
   deploy:
