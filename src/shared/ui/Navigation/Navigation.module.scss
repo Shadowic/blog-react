@@ -1,5 +1,5 @@
 .navbar {
-  display: flex;
+  display: none;
   position: relative;
   overflow: hidden;
   &__content {
@@ -57,5 +57,11 @@
       border-top-left-radius: 8px;
       border-top-right-radius: 8px;
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    display: flex;
   }
 }

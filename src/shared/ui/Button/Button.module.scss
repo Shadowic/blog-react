@@ -48,13 +48,13 @@
 }
 
 .btnSmall {
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
+  padding: 0.35rem 1rem;
+  font-size: 0.75rem;
 }
 
 .btnMedium {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
 }
 
 .btnLarge {
@@ -73,13 +73,19 @@
   outline-offset: 2px;
 }
 
-@media (max-width: 768px) {
-  .btn {
-    padding: 0.6rem 1.2rem;
+@media (min-width: 768px) {
+  .btnSmall {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .btnMedium {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
   }
 
   .btnLarge {
-    padding: 0.8rem 1.6rem;
-    font-size: 1rem;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
   }
 }

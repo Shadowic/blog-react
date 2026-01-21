@@ -1,23 +1,13 @@
 .content {
   display: grid;
-  grid-template-columns: 1fr clamp(10px, 33%, 340px);
-  gap: 36px;
-  //@include md {
-  //  grid-template-columns: 1fr;
-  //}
-}
-.intro {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  grid-template-columns: 1fr;
+  gap: 3rem;
 }
 .cover {
   width: 100%;
-  max-width: 340px;
+  max-width: 240px;
   margin: 0 auto;
-  order: unset;
-  //@include md {
-  //  order: -1;
-  //}
+  order: -1;
   &__wrap {
     border-radius: 50%;
     overflow: hidden;
@@ -129,5 +119,15 @@
       //  margin-top: 40px;
       //}
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .content {
+    grid-template-columns: 1fr clamp(10px, 33%, 340px);
+  }
+  .cover {
+    order: unset;
+    max-width: 340px;
   }
 }

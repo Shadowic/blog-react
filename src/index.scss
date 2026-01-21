@@ -7,7 +7,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Обновленные цветовые переменные для светлой темы */
   --bg-color: #fefefe;
   --text-color: #b3a4a4;
   --text-color-secondary: #4a5568;
@@ -61,7 +60,7 @@ html {
   font-style: normal;
   font-size: 14px;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.6;
   width: 100%;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -110,7 +109,6 @@ button {
   cursor: pointer;
 }
 
-/* Утилитарные классы */
 .button-primary {
   background-color: var(--accent-amber);
   color: var(--bg-color);
@@ -141,14 +139,6 @@ button {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Адаптивность */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2.2em;
-  }
-}
-
-/* Анимации */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -168,5 +158,23 @@ button {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  body,
+  html {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  h1 {
+    font-size: 2.2em;
+  }
+}
+
+@media (min-width: 1920px) {
+  body,
+  html {
+    font-size: 20px;
   }
 }
