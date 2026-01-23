@@ -19,24 +19,30 @@
     backdrop-filter: blur(5px);
   }
   &__item {
+    display: flex;
     position: relative;
     background-color: #1c294375;
     aspect-ratio: 1 / 1;
-    //padding: 4px;
-    //border-radius: 8px;
-    //@include md {
-      padding: 12px 12px 36px;
-      border-radius: 16px;
-    //}
+    padding: 4px;
+    border-radius: 8px;
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
       border-radius: 6px;
-      //@include md {
-      //  border-radius: 12px;
-      //}
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .album {
+    &__item {
+      padding: 12px 12px 36px;
+      border-radius: 16px;
+      img {
+        border-radius: 12px;
+      }
     }
   }
 }

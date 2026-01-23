@@ -3,7 +3,7 @@
   flex-direction: column;
   position: relative;
   gap: 1.6rem;
-  margin: 2rem 0 3rem;
+  margin: 1rem 0 2rem;
   i {
     display: inline-flex;
     place-items: center;
@@ -19,7 +19,7 @@
   &__caption {
     color: var(--text-color);
     font-size: 0.9rem;
-    line-height: 1.8rem;
+    line-height: 1.4rem;
   }
 }
 
@@ -238,6 +238,7 @@
     margin: 2rem 0 4rem;
     &__caption {
       font-size: 1.2rem;
+      line-height: 1.8rem;
     }
   }
 }

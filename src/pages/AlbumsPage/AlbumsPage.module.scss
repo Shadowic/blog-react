@@ -28,7 +28,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 12px 12px 36px;
+    padding: 0.85rem 0.85rem 2rem;
     background-color: #1c294375;
     border-radius: 16px;
     color: var(--color-text);
@@ -49,16 +49,15 @@
     }
     &__title {
       font-family: 'DM Sans', sans-serif;
-      font-size: 24px;
+      font-size: 1.5rem;
       margin-top: 24px;
     }
     &__caption {
-      font-size: 14px;
-      margin-top: 12px;
+      font-size: 0.8rem;
     }
     &__description {
       font-size: 1rem;
-      margin-block: 12px 24px;
+      margin-block: 0.85rem 2.2rem;
       display: -webkit-box;
       -webkit-line-clamp: 5;
       -webkit-box-orient: vertical;
@@ -67,9 +66,21 @@
     }
     &__btn {
       margin-top: auto;
-      //@include md {
-      //  margin-top: 40px;
-      //}
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .albums {
+    &__item {
+      padding: 1rem 1rem 2.4rem;
+      &__caption {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+      }
+      &__description {
+        margin-block: 1rem 2.4rem;
+      }
     }
   }
 }
