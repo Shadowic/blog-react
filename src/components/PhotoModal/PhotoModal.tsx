@@ -30,7 +30,7 @@ export const PhotoModal: FC<PhotoModalProps> = ({
             <div className={styles.photoModal}>
                 <div className={styles.photoContainer}>
                     <button
-                        className={styles.navButton}
+                        className={`${styles.navButton} ${styles.navButton__left}`}
                         onClick={onPrev}
                         aria-label="Предыдущее фото"
                     >
@@ -45,7 +45,7 @@ export const PhotoModal: FC<PhotoModalProps> = ({
                     />
 
                     <button
-                        className={styles.navButton}
+                        className={`${styles.navButton} ${styles.navButton__right}`}
                         onClick={onNext}
                         aria-label="Следующее фото"
                     >
