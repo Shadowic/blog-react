@@ -89,7 +89,7 @@
 .burger span {
   width: 24px;
   height: 2px;
-  background-color: var(--text-color);
+  background-color: var(--primary-color);
   transition: all 0.3s ease;
   transform-origin: center;
 }
@@ -151,6 +151,10 @@
 }
 
 @media (max-width: 480px) {
+  .header {
+    padding: 0.5rem 0;
+  }
+
   .title {
     font-size: 1.25rem;
   }
