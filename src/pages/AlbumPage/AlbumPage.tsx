@@ -55,7 +55,7 @@ export default function AlbumPage() {
                     </>
                 }
                 caption={
-                    <div dangerouslySetInnerHTML={{
+                    <span dangerouslySetInnerHTML={{
                         __html: t(`${albumKey}.description`, album.description)
                     }} />
                 }
