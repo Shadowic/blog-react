@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { FC, ReactNode } from "react";
 // import { Outlet } from "react-router-dom";
 import Header from "../../widgets/LayoutHeader/Header";
@@ -6,12 +7,23 @@ import { CoffeeIcon, GithubIcon, LoupeIcon, PinterestIcon, TgIcon } from '../../
 import styles from "./MainLayout.module.scss";
 import {Container} from "../ui/Container/Container";
 import {ToTopButton} from "../../widgets/ToTopButton/ToTopButton";
+import {MenuMobile} from "../ui/MenuMobile/MenuMobile";
 
 interface MainLayoutProps {
   children?: ReactNode;
 }
 
 export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
+
+    const [isMenuMobileOpen, setIsMenuMobileOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuMobileOpen(!isMenuMobileOpen);
+    };
+
+    const closeMenu = () => {
+        setIsMenuMobileOpen(false);
+    };
 
     const socialLinks = [
         {
@@ -44,11 +56,18 @@ export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
     return (
         <>
             <div className={styles.layout}>
-                <Header />
+                <Header
+                    isMenuMobileOpen={isMenuMobileOpen}
+                    onToggleMenu={toggleMenu}
+                />
                 <Container>
                     <main className={styles.main}>{children}</main>
                 </Container>
                 <Footer socialLinks={socialLinks} />
+                <MenuMobile
+                    isOpen={isMenuMobileOpen}
+                    onClose={closeMenu}
+                />
                 <ToTopButton />
             </div>
         </>

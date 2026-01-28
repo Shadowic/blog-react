@@ -1,6 +1,5 @@
 import type { FC } from "react";
 import {ModalProvider} from "../shared/lib/context/ModalContext";
-import {AboutModal} from "./AboutModal";
 import {ParticlesBackground} from '../shared/ui/ParticlesBackground/index';
 import {MainLayout} from "../shared/layouts/MainLayout";
 import {Heading} from "../shared/ui/Heading";
@@ -38,7 +37,6 @@ export const App: FC = () => {
               <Route element={
                 <MainLayout>
                   {/* Содержимое для всех маршрутов */}
-                  <AboutModal />
                   <Outlet /> {/* Здесь будут страницы */}
                 </MainLayout>
               }>

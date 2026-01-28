@@ -1,4 +1,3 @@
-import { useState } from "react";
 import type { FC } from "react";
 import { ThemeSwitcher } from "../../features/ThemeSwitcher/ui/ThemeSwitcher";
 import { LangSwitcher } from "../../features/LangSwitcher/ui/LangSwitcher";
@@ -8,9 +7,13 @@ import { useTranslation } from "react-i18next";
 import styles from "./Header.module.scss";
 import { Container } from '../../shared/ui/Container/Container';
 
-export const Header: FC = () => {
+interface HeaderProps {
+  isMenuMobileOpen: boolean;
+  onToggleMenu: () => void;
+}
+
+export const Header: FC<HeaderProps> = ({ isMenuMobileOpen, onToggleMenu }) => {
   const { t } = useTranslation();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header className={styles.header}>
@@ -25,9 +28,10 @@ export const Header: FC = () => {
           <div className={styles.controls}>
             <ThemeSwitcher />
             <button
-              className={styles.burger}
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Открыть меню"
+                className={`${styles.burger} ${isMenuMobileOpen ? styles.active : ''}`}
+                onClick={onToggleMenu}
+                aria-label={isMenuMobileOpen ? "Закрыть меню" : "Открыть меню"}
+                aria-expanded={isMenuMobileOpen}
             >
               <span></span>
               <span></span>

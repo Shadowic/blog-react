@@ -12,9 +12,6 @@
     color: var(--primary-color);
     position: relative;
     transition: color 0.3s ease-in-out;
-    //@include sm {
-    //  padding: 24px 24px 0;
-    //}
     &:first-child::before,
     &:first-child::after {
       content: '';
@@ -25,21 +22,12 @@
       position: absolute;
       bottom: 0;
       transition: background-color 0.3s ease-in-out;
-      //@include sm {
-      //  width: 24px;
-      //}
     }
     &:first-child::before {
       left: -8px;
-      //@include sm {
-      //  left: 0;
-      //}
     }
     &:first-child::after {
       right: -8px;
-      //@include sm {
-      //  right: 0;
-      //}
     }
   }
   &__content__item {
@@ -48,9 +36,6 @@
     transition: border-color 0.2s ease-in-out;
     align-content: center;
     text-align: center;
-    //@include sm {
-    //  padding: 12px 24px 12px;
-    //}
     &:has(.navLink.active) {
       border: 1.5px solid var(--primary-color);
       border-bottom-color: transparent;
