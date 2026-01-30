@@ -84,14 +84,39 @@
   cursor: pointer;
   padding: 0.5rem;
   gap: 0.25rem;
+  position: relative;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  gap: 0.25rem;
+  position: relative;
 }
 
 .burger span {
   width: 24px;
   height: 2px;
   background-color: var(--primary-color);
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   transform-origin: center;
+}
+
+.burger.active span:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.burger.active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.burger.active span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 @media (max-width: 768px) {
