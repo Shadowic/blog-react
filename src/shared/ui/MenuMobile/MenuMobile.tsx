@@ -3,6 +3,7 @@ import { FC, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import styles from './MenuMobile.module.scss';
+import {ParticlesBackground} from "../ParticlesBackground";
 
 interface MenuMobileProps {
     isOpen: boolean;
@@ -62,7 +63,8 @@ export const MenuMobile: FC<MenuMobileProps> = ({
 
     return (
         <div className={`${styles.menuMobile} ${isOpen ? styles.open : ''}`}>
-            <nav>
+            <ParticlesBackground />
+            <nav className={styles.menuMobile__nav}>
                 <ul className={styles.menuMobile__list}>
                     {navItems.map((item) => (
                         <li
