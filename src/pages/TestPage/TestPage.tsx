@@ -10,6 +10,7 @@ export default function TestPage() {
     return (
         <>
             <Heading
+                icon={<IconComponent />}
                 heading={<Trans i18nKey="testPage.title" components={{ b: <b /> }}>
                     <b>Fallback</b> текст
                 </Trans>}
