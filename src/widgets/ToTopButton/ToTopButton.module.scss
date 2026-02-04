@@ -2,6 +2,8 @@
   position: fixed;
   right: 24px;
   bottom: 24px;
+  z-index: 99;
+  backdrop-filter: blur(5px);
 }
 
 @media (min-width: 768px) {
